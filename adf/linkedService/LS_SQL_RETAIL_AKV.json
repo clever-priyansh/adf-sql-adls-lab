@@ -1,0 +1,24 @@
+{
+	"name": "LS_SQL_RETAIL_AKV",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "day12learning.database.windows.net",
+			"database": "shopdbday12",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sqladmin",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_KEYVAULT_RETAIL",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sql-retail-password"
+			}
+		}
+	}
+}
