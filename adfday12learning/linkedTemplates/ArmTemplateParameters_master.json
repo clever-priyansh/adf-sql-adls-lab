@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfday12learning"
+		},
+		"LS_AzureSQL_SalesDB_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlsday12learning.dfs.core.windows.net"
+		},
+		"LS_ADLS_Raw_properties_typeProperties_url": {
+			"value": "https://adlsday12learning.dfs.core.windows.net/"
+		},
+		"LS_AzureSQL_SalesDB_properties_typeProperties_server": {
+			"value": "day12learning.database.windows.net"
+		},
+		"LS_AzureSQL_SalesDB_properties_typeProperties_database": {
+			"value": "sqldb2day12"
+		},
+		"LS_AzureSQL_SalesDB_properties_typeProperties_userName": {
+			"value": "sqladmin"
+		},
+		"LS_KEYVAULT_RETAIL_properties_typeProperties_baseUrl": {
+			"value": "https://kv-adf-retaildemo-pk.vault.azure.net/"
+		},
+		"LS_SQL_RETAIL_AKV_properties_typeProperties_server": {
+			"value": "day12learning.database.windows.net"
+		},
+		"LS_SQL_RETAIL_AKV_properties_typeProperties_database": {
+			"value": "shopdbday12"
+		},
+		"LS_SQL_RETAIL_AKV_properties_typeProperties_userName": {
+			"value": "sqladmin"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

@@ -1,0 +1,112 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfday12learning"
+		},
+		"LS_AzureSQL_SalesDB_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AzureSQL_SalesDB'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsday12learning.dfs.core.windows.net"
+		},
+		"LS_ADLS_Raw_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsday12learning.dfs.core.windows.net/"
+		},
+		"LS_AzureSQL_SalesDB_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "day12learning.database.windows.net"
+		},
+		"LS_AzureSQL_SalesDB_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqldb2day12"
+		},
+		"LS_AzureSQL_SalesDB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqladmin"
+		},
+		"LS_KEYVAULT_RETAIL_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-adf-retaildemo-pk.vault.azure.net/"
+		},
+		"LS_SQL_RETAIL_AKV_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "day12learning.database.windows.net"
+		},
+		"LS_SQL_RETAIL_AKV_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "shopdbday12"
+		},
+		"LS_SQL_RETAIL_AKV_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sqladmin"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adfday12learning_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_AzureSQL_SalesDB_password": {
+						"value": "[parameters('LS_AzureSQL_SalesDB_password')]"
+					},
+					"LS_ADLS_Raw_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_Raw_properties_typeProperties_url')]"
+					},
+					"LS_AzureSQL_SalesDB_properties_typeProperties_server": {
+						"value": "[parameters('LS_AzureSQL_SalesDB_properties_typeProperties_server')]"
+					},
+					"LS_AzureSQL_SalesDB_properties_typeProperties_database": {
+						"value": "[parameters('LS_AzureSQL_SalesDB_properties_typeProperties_database')]"
+					},
+					"LS_AzureSQL_SalesDB_properties_typeProperties_userName": {
+						"value": "[parameters('LS_AzureSQL_SalesDB_properties_typeProperties_userName')]"
+					},
+					"LS_KEYVAULT_RETAIL_properties_typeProperties_baseUrl": {
+						"value": "[parameters('LS_KEYVAULT_RETAIL_properties_typeProperties_baseUrl')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"LS_SQL_RETAIL_AKV_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_RETAIL_AKV_properties_typeProperties_server')]"
+					},
+					"LS_SQL_RETAIL_AKV_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_RETAIL_AKV_properties_typeProperties_database')]"
+					},
+					"LS_SQL_RETAIL_AKV_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_RETAIL_AKV_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
