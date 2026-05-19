@@ -1,0 +1,10 @@
+{
+	"name": "LS_ADLS_Raw",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://adlsday12learning.dfs.core.windows.net/"
+		}
+	}
+}
