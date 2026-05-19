@@ -1,0 +1,17 @@
+{
+	"name": "LS_AzureSQL_SalesDB",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "day12learning.database.windows.net",
+			"database": "sqldb2day12",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sqladmin",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDIzNzFBRjk5LUJFQkQtNDYzMy1CNkE2LTc0Q0ZDNjQzQ0E1Rl81Mjk3YWRiNy1mNWM5LTQ3ZGEtOWMyOS0yNDAwM2ViMjE0ZTciDQp9"
+		}
+	}
+}
